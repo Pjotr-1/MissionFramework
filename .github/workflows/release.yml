@@ -1,0 +1,31 @@
+name: Release MissionFramework
+
+on:
+  push:
+    tags:
+      - "v*.*.*"
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Build MissionFramework
+        run: |
+          python3 tools/build_mission_framework.py
+
+      - name: Create release package
+        run: |
+          mkdir -p release/MissionFramework
+          cp -r src tools test docs README.md LICENSE .gitignore release/MissionFramework/ || true
+          cp dist/mission_framework.lua release/MissionFramework/
+          cd release
+          zip -r MissionFramework-${{ github.ref_name }}.zip MissionFramework
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: release/MissionFramework-${{ github.ref_name }}.zip
