@@ -28,10 +28,13 @@ jobs:
           mkdir -p build/ldoc_src
           cp -r src/*.lua build/ldoc_src/
           sed -i '/^---@/d' build/ldoc_src/*.lua
-
+          
       - name: Generate docs
         run: |
-          ldoc build/ldoc_src
+          rm -rf docs
+          mkdir -p docs
+          ldoc -d docs build/ldoc_src
+          ls -la docs
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
