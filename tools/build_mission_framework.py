@@ -42,7 +42,7 @@ MissionFramework.Build = {{
 def build_version():
     base = read_version()
     build_id = datetime.now().strftime("%Y%m%d.%H%M")
-    return f"{base}+{build_id}", build_id
+    return f"{base}.{build_id}", build_id
 
 def build() -> None:
     version = write_generated_version()

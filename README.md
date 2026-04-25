@@ -55,6 +55,7 @@ Save the mission
 This creates:
 l10n/DEFAULT/mission_framework.lua
 After that, patching works automatically.
+
 🎮 Workflow
 1. Edit Lua files (src/)
 2. Build:
@@ -86,7 +87,7 @@ luarocks install ldoc
 Generate documentation
 ldoc src
 Output:
-doc/
+docs/
 Optional config (config.ld)
 Create file:
 project = "MissionFramework"
@@ -120,7 +121,7 @@ Per
 DCS simulation, systems design, and mission architecture
 
 
-[![Version](https://img.shields.io/github/v/tag/@Pjotr-1/MissionFramework?label=version)](https://github.com/@Pjotr-1/MissionFramework/tags)
-[![License](https://img.shields.io/github/license/@Pjotr-1/MissionFramework)](LICENSE)
-[![Docs](https://github.com/@Pjotr-1/MissionFramework/actions/workflows/docs.yml/badge.svg)](https://github.com/@Pjotr-1/MissionFramework/actions/workflows/docs.yml)
-[![Release](https://github.com/@Pjotr-1/MissionFramework/actions/workflows/release.yml/badge.svg)](https://github.com/@Pjotr-1/MissionFramework/actions/workflows/release.yml)
+[![Version](https://img.shields.io/github/v/tag/Pjotr-1/MissionFramework?label=version)](https://github.com/Pjotr-1/MissionFramework/tags)
+[![License](https://img.shields.io/github/license/Pjotr-1/MissionFramework)](LICENSE)
+[![Docs](https://github.com/Pjotr-1/MissionFramework/actions/workflows/docs.yml/badge.svg)](https://github.com/Pjotr-1/MissionFramework/actions/workflows/docs.yml)
+[![Release](https://github.com/Pjotr-1/MissionFramework/actions/workflows/release.yml/badge.svg)](https://github.com/Pjotr-1/MissionFramework/actions/workflows/release.yml)
