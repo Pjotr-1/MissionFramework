@@ -23,8 +23,15 @@ jobs:
           sudo apt-get install -y lua5.1 luarocks
           sudo luarocks install ldoc
 
+      - name: Prepare docs source
+        run: |
+          mkdir -p build/ldoc_src
+          cp -r src/*.lua build/ldoc_src/
+          sed -i '/^---@/d' build/ldoc_src/*.lua
+
       - name: Generate docs
-        run: ldoc src
+        run: |
+          ldoc build/ldoc_src
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
@@ -36,4 +43,3 @@ jobs:
 
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v4
-        
